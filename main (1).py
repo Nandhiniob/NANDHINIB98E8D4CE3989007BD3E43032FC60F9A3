@@ -1,8 +1,10 @@
-from flask import Flask
-app = Flask('app')
-
-@app.route('/')
-def hello_world():
-  return 'Hello, World!'
-
-app.run(host='0.0.0.0', port=8080)
+def is_leap_year(year):
+  if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+    return True
+  else:
+    return False
+year = int(input("ENTER YOUR YEAR HERE:"))
+if is_leap_year(year):
+  print("{} is a leap year.".format(year))
+else:
+  print("{} is not a leap year.".format(year))
